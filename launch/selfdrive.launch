@@ -1,0 +1,9 @@
+<launch>
+  <include file = "$(find rbkairos_gazebo)/launch/rbkairos_gazebo.launch">
+     <arg name = "gazebo_world" value = "$(find rbkairos_gazebo)/worlds/track.world" />
+  </include>
+  
+  <node name="teleop_twist_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>	
+  <node name="follower" pkg="rbkairos_gazebo" type="selfdrive.py" output="screen"/>
+   
+</launch>
